@@ -97,6 +97,37 @@ else:
 if skills in person:
     print(person(index))
 
+person = {
+    'first_name': 'Asabeneh',
+    'last_name': 'Yetayeh',
+    'age': 250,
+    'country': 'Finland',
+    'is_married': True,
+    'skills': ['JavaScript', 'React', 'Node', 'MongoDB', 'Python'],
+    'address': {
+        'street': 'Space street',
+        'zipcode': '02210'
+    }
+    }
+print('skills' in person)
+print(person['skills'][2])
+print('Python' in person['skills'])
+print(person['skills'])
+
+if person['skills'] in ["JavaScript", "React"]:
+    print("He is a front end developer")
+elif person["skills"] in ["Node", "Python", "MangoDB"]:
+    print("He is beckend developer")
+elif person["skills"] in ["React", "Node", "MongoDB"]:
+    print("He is a fullstack developer")
+else:
+    print("Unknown title")
+
+if person['is_married'] in ['True'] or person['country'] in ['Finland']:
+    print(person["first_name"], "lives in", person["country"],".", "He is married")
+else:
+    print("Invalid")
+
 
 
 
