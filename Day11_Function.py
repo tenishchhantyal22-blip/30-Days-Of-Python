@@ -145,4 +145,87 @@ def evens_and_odds(number):
             odd = odd + 1
     print(f"Total Number of even number '{even} and total number of odd number '{odd}' ")
 print(evens_and_odds(100))
+
+#QNA A Declare a function named evens_and_odds . It takes a positive integer as parameter and it counts number of evens and odds in the number.
+    # print(evens_and_odds(100))
+    # The number of odds are 50.
+    # The number of evens are 51.
+def evens_and_odds(n):
+    even = 0
+    odd = 0
+    for num in range(n+1):
+        if num % 2 == 0:
+            even = even + 1
+        else:
+            odd = odd + 1
+    return (f"The total number of even digits is '{even}' and total odd number digit is '{odd}' ") 
+print(evens_and_odds(100))
+
+# QNA 2 Call your function factorial, it takes a whole number as a parameter and it return a factorial of the number
+def factorial(n):
+    if n < 0:
+        return "Factorial is not define for negative number "
+    results = 1
+    for num in range (n, 1, -1):
+        results *= num
+        return results
+print(factorial(5))
+
+# QNA 3 Call your function is_empty, it takes a parameter and it checks if it is empty or not
+def is_empty(para):
+    if not para:
+        return "Empty"
+    else:
+        return "Not Empty"
+print(is_empty([1, 2]))
+
+#QNA 4 Write different functions which take lists. They should calculate_mean, calculate_median, calculate_mode, calculate_range, calculate_variance, calculate_std (standard deviation)
+import statistics
+def numb_list(lst):
+    mean = statistics.mean(lst)
+    median = statistics.median(lst)
+    mode = statistics.mode(lst)
+    rang = max(lst)-min(lst)
+    variance = statistics.variance(lst)
+    standard_deviation = statistics.stdev(lst)
+return {
+    "Mean Value": mean,
+    "Median Value": median,
+    "Mode Value": Mode,
+    "Range Value": rang,
+    "Variance Value": variance,
+    "Standard Deviation Value": standard_deviation
+}
+simple_list = [12, 22, 32, 12, 21]
+print(numb_list(simple_list))
+
+#Write a function called greet which takes a default argument, name. 
+# If no argument is supplied it should print "Hello, Guest!",
+#  otherwise it should greet the person by name.
+
+def greet(*names):
+    if not names:
+        return "Hello, Guest!"
+    
+    # Joins multiple names together with a comma
+    all_names = ", ".join(names)
+    return f"Hello, {all_names}!"
+
+print(greet())                      # Output: Hello, Guest!
+print(greet('Tenish', 'Alex'))      # Output: Hello, Tenish, Alex!
+
+#Create a function called show_args to take an arbitrary number of named arguments and print their names and values.
+#show_args(name="Alice", age=30, city="New York")
+# Received: name: Alice, age: 30, city: New York
+#show_args(name="Bob", pet="Fluffy, the bunny")
+# Received: name: Bob, pet: Fluffy, the bunny
+def show_args(**kwargs):
+    # Create a list of formatted strings like "name: Alice"
+    pairs = [f"{key}: {value}" for key, value in kwargs.items()]
+    
+    # Join them together with commas
+    result = ", ".join(pairs)
+    
+    print(f"Received: {result}")
+
         
