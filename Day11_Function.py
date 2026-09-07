@@ -228,4 +228,48 @@ def show_args(**kwargs):
     
     print(f"Received: {result}")
 
+#DAY11 Remaining
+#Exercise level 3
+
+#QNA 1
+def is_prime(n: int):
+    if n <= 1:
+        return False
+    if n == 2:
+        return False
+    if n % 2 == 0:
+        return False
+    for i in range (3, int(n**0.5+1), 2):
+        if n % i == 0:
+            return False
+    return True
+number = 9
+print(is_prime(9))
+
+#QNA 2
+def all_unique(input_list):
+    return len(input_list) == len(set(input_list))
+
+print(all_unique([1, 3, 3, 2, 3, 4]))
+
+#QNA 3
+def check_same_data(list):
+    if not list:
+        return True
+    first_type = type(list[0])
+    return all(type(item) is first_type for item in list)
+lst = [1, 2, 3, "four"]
+print(check_same_data(lst))
+
+#QNA 4
+import keyword
+def is_valid_variable(name):
+    if not isinstance(name, str):
+        return False
+    return name.isinstance() and not keyword.iskeyword(name)
+print(is_valid_variable('python_30_days'))
+
+
+
+
         
