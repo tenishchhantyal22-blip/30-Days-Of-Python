@@ -167,7 +167,7 @@ def rgb_color_gen():
     g = random.randint(0, 255)
     b = random.randint(0, 255)
 
-    return f"rgf({r}, {g}, {b})"
+    return f"rgf({r}, {g}, {b}"
 print(rgb_color_gen())
 
 #QNA 4
