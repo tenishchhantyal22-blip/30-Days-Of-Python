@@ -105,4 +105,71 @@ from random import random, randint
 print(random()) # it doesn't take any arguments it return value between 0 and 0.9999
 print(randint(2, 100)) # it returns a random number between 2 and 100
 
+#Modify the previous task. Declare a function named user_id_gen_by_user. It doesn’t take any parameters but it takes two inputs
+# using input(). One of the inputs is the number of characters and the second input is the number of IDs which are supposed to
+# be generated.
+# print(user_id_gen_by_user()) # user input: 5 5
+#output:
+#kcsy2
+#SMFYb
+#bWmeq
+#ZXOYh
+#2Rgxf
+# print(user_id_gen_by_user()) # 16 5
+#1GCSgPLMaBAVQZ26
+#YD7eFwNQKNs7qXaT
+#ycArC5yrRupyG00S
+#UbGxOFI7UXSWAyKN
+#dIV0SSUTgAdKwStr
+
+#Exercise Of DAY 12 Module
+#QNA 1
+import secrets
+import string
+import random
+
+def generate_mixed_id():
+    letters = string.ascii_leters
+    digits = string.digits
+
+    chosen_letters = [secrets.choice(letters) for _ in range(3)]
+    chosen_digits = [secrets.choice(digits) for _ in range(3)]
+
+    id_list = chosen_letters + chosen_digits
+    random.shuffle(id_list)
+
+    return ''.join(id_list)
+print(generate_mixed_id())
+
+
+# QNA 2
+import string
+import random
+def user_id_gen_by_user():
+
+    first_num = int(input("Enter the first number: "))
+    second_num = int(input("Enter the sencond number: "))
+
+    char_pool = first_num + second_num
+
+    for _ in range(second_num):
+        generated_id = ''.join(random.choices(char_pool, k=first_num))
+        print(generated_id)
+
+user_id_gen_by_user()
+
+#QNA 3
+import random
+
+def rgb_color_gen():
+
+    r = random.randint(0, 255)
+    g = random.randint(0, 255)
+    b = random.randint(0, 255)
+
+    return f"rgf({r}, {g}, {b})"
+print(rgb_color_gen())
+
+#QNA 4
+
 
